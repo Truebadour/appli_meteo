@@ -1,0 +1,76 @@
+:root {
+  --backgroud_color: rgb(47, 93, 223);
+  --wrapper_color: rgb(77, 132, 233);
+}
+
+/* Font "Poppins" pour l'application */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+/* l'étoile sert à donner un style par défaut à tous les éléments */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: whitesmoke;
+  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+body {
+  background-color: var(--backgroud_color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  aspect-ratio: 16/9;
+  margin: 0 5vh;
+  background-color: var(--wrapper_color);
+  min-width: 400px;
+  min-height: 600px;
+  border: 1px solid rgba(245, 245, 245, 0.199);
+  border-radius: 20px;
+  box-shadow: 0px 3px 10px 5px rgba(1, 2, 3, 0.089);
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "wg tp"
+    "wg hu"
+    "wg wi";
+}
+
+.weather_main {
+  grid-area: wg;
+  background: gray;
+  align-items: center;
+}
+
+.temp_feel {
+  grid-area: tp;
+  background: tomato;
+}
+
+.humidity {
+  grid-area: hu;
+  background: turquoise;
+}
+
+.wind {
+  grid-area: wi;
+  background: violet;
+}
+@media screen and (max-width: 600px){
+    .wrapper{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 55% 15% 15% 15%;
+        grid-template-areas: 
+        "wg"
+        "tp"
+        "hu"
+        "wi";
+    }
+}
